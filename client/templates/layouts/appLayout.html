@@ -1,0 +1,30 @@
+<template name="appLayout">
+
+  {{#ionBody}}
+    {{> ionNavBar}}
+
+    {{#ionNavView}}
+      {{> yield}}
+    {{/ionNavView}}
+
+    {{#if isAndroid}}
+      {{#ionTabs style="android"}}
+        {{> ionTab title="答题速览" path="trending" icon="android-star"}}
+        {{> ionTab title="人才市场" path="recent" icon="android-time"}}
+        {{> ionTab title="职推" path="notifications" icon="android-notifications"}}
+        {{> ionTab title="个人中心" path="profile" icon="android-happy"}}
+
+
+      {{/ionTabs}}
+    {{else}}
+      {{#ionTabs style="ios"}}
+        {{> ionTab title="答题速览" path="trending" iconOff="ios-bolt-outline" iconOn="ios-bolt" class="tab-item-positive"}}
+        {{> ionTab title="人才市场" path="recent" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}
+        {{> ionTab title="职推" path="notifications" iconOff="ios-bell-outline" iconOn="ios-bell" class="tab-item-positive"}}
+        {{> ionTab title="个人中心" path="profile" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
+
+      {{/ionTabs}}
+    {{/if}}
+  {{/ionBody}}
+
+</template>
