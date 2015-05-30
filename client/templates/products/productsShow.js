@@ -20,8 +20,9 @@ Template.productsShow.helpers({
   },
 
   comments: function () {
-    return Comments.find({productId: Router.current().params._id}, {sort: {createdAt: -1}});
+    return Comments.find({productId: Router.current().params._id}, {sort: {numberOfupVotes: -1}});
   }
+  
 });
 
 Template.productsShow.events({

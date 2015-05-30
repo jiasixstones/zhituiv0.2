@@ -3,7 +3,7 @@ Template._upVoteButton.events({
     event.preventDefault();
     //console.log(this);
     var commentId = template.data._id;
-    console.log();
+
     //console.log(commentId);
     if (!Meteor.user()) {
       IonModal.open('signIn');

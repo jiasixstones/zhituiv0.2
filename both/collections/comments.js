@@ -1,9 +1,16 @@
 Comments = new Mongo.Collection('comments');
 
 Comments.helpers({
+
+  datePosted: function () {
+    return moment(this.createdAt).format('M月D日H:m:s');
+  },
+
   author: function () {
-    return Meteor.users.findOne({_id: this.userId});
+    //return Meteor.users.findOne({_id: this.userId});
+    return this.userId;
   }
+
 });
 
 Comments.attachSchema(new SimpleSchema({
