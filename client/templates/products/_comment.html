@@ -1,11 +1,10 @@
 <template name="_comment">
   <div class="item item-text-wrap comment-item">
-
-    {{#with author}}
     <span class="voters-comments">
-      {{> _upVoteButton }}
+      {{> _upVoteButton}}
     </span>
 
+    {{#with author}}
       <a href="{{pathFor 'users.show'}}" class="comment-item-author">
         {{> avatar user=this size="small" shape="circle"}}
         {{profile.name}}

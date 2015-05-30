@@ -25,7 +25,7 @@ Meteor.methods({
       return;
     }
 
-    Comments.update({productId: _id}, {$inc: {numberOfupVotes: 1}});
+    Comments.update({_id: _id}, {$inc: {numberOfupVotes: 1}});
   }
 
 });
