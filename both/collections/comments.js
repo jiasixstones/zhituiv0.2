@@ -37,5 +37,17 @@ Comments.attachSchema(new SimpleSchema({
         this.unset();
       }
     }
+  },
+
+  upvoterIds: {
+    type: [String],
+    optional: true,
+    defaultValue: []
+  },
+  numberOfupVotes: {
+    type: Number,
+    optional: true,
+    defaultValue: 0
   }
+
 }));
