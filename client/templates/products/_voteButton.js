@@ -21,16 +21,3 @@ Template._voteButton.helpers({
     }
   }
 });
-
-Template.voters-comments.events({
-  'click': function (event, template) {
-    event.preventDefault();
-
-    if (!Meteor.user()) {
-      IonModal.open('signIn');
-      return;
-    }
-
-    Meteor.call('Comments.vote', this._id);
-  }
-});
