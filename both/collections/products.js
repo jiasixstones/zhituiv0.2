@@ -32,14 +32,15 @@ Products.search = function(query) {
 };
 
 Products.attachSchema(new SimpleSchema({
-  url: {
+
+  /*url: {
     type: String,
     autoform: {
       'label-type': 'placeholder',
       placeholder: 'Product URL'
     },
     max: 400
-  },
+  },*/
   name: {
     type: String,
     autoform: {

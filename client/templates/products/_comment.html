@@ -1,22 +1,25 @@
 <template name="_comment">
   <div class="item item-text-wrap comment-item">
-    <span class="voters-comments">
-      {{> _upVoteButton}}
-    </span>
 
+<!--
     {{#with author}}
       <a href="{{pathFor 'users.show'}}" class="comment-item-author">
         {{> avatar user=this size="small" shape="circle"}}
         {{profile.name}}
       </a>
     {{/with}}
+  -->
     <p>
-      {{body}}{{numberOfupVotes}}
+      {{body}}
     </p>
-
-    <span class="comments-count">
+  <br>
+    <p>
+      {{> _upVoteButton}}
       {{numberOfupVotes}}
-      {{> ionIcon icon="ios-chatbubble" }}
-    </span>
-  </div>
+
+    <!--  {{> ionIcon icon="ios-chatbubble" }}-->
+  </p>
+
+
+</div>
 </template>

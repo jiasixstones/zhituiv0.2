@@ -22,18 +22,23 @@
         {{#with product}}
 
           {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
-            {{> _voteButton}}
+            <!--{{> _voteButton}}
             <h2 class="product-title">
               <a href="{{url}}" target="_blank" class="positive">{{name}}</a>
+            </h2>-->
+            <h2>
+              {{name}}
             </h2>
             <p>
               {{tagline}}
             </p>
+            <!--
             {{#with author}}
               <p>
                 <small>via <a href="{{pathFor 'users.show'}}" class="dark">{{profile.name}}</a></small>
               </p>
             {{/with}}
+          -->
             <span class="date-posted">
               {{datePosted}}
             </span>
