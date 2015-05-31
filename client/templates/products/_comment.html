@@ -9,8 +9,13 @@
       </a>
     {{/with}}
   -->
-  <a href="{{pathFor 'rusume'}}">{{author}}</a>
-  
+  {{#with author}}
+    <a href="{{pathFor 'resume'}}">
+      {{author}}
+    </a>
+  {{/with}}
+
+
   <p class="date-posted">
     {{datePosted}}
   </p>
