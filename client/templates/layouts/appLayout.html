@@ -9,18 +9,18 @@
 
     {{#if isAndroid}}
       {{#ionTabs style="android"}}
-        {{> ionTab title="职推" path="notifications" icon="android-notifications"}}
-        {{> ionTab title="答题速览" path="trending" icon="android-star"}}
-        {{> ionTab title="人才市场" path="recent" icon="android-time"}}
+        {{> ionTab title="英雄榜" path="notifications" icon="ios-home-outline"}}
+        {{> ionTab title="职前测试" path="trending" icon="android-clipboard"}}
+        {{> ionTab title="人才市场" path="recent" icon="ios-people-outline"}}
         {{> ionTab title="个人中心" path="profile" icon="android-happy"}}
 
 
       {{/ionTabs}}
     {{else}}
       {{#ionTabs style="ios"}}
-        {{> ionTab title="职推" path="notifications" iconOff="ios-bell-outline" iconOn="ios-bell" class="tab-item-positive"}}
-        {{> ionTab title="答题速览" path="trending" iconOff="ios-bolt-outline" iconOn="ios-bolt" class="tab-item-positive"}}
-        {{> ionTab title="人才市场" path="recent" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}  
+        {{> ionTab title="英雄榜" path="notifications" iconOff="ios-home-outline" iconOn="ios-home" class="tab-item-positive"}}
+        {{> ionTab title="职前测试" path="trending" iconOff="ios-compose-outline" iconOn="ios-compose" class="tab-item-positive"}}
+        {{> ionTab title="人才市场" path="recent" iconOff="ios-people-outline" iconOn="ios-people" class="tab-item-positive"}}
         {{> ionTab title="个人中心" path="profile" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
 
       {{/ionTabs}}

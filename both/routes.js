@@ -21,3 +21,6 @@ Router.route('/trending', {
 Router.route('/profile', {
   name: 'profile'
 });
+
+Router.route('/rusume',
+  {name:'resume'});

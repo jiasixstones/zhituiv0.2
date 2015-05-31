@@ -22,30 +22,20 @@
         {{#with product}}
 
           {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
-            <!--{{> _voteButton}}
-            <h2 class="product-title">
-              <a href="{{url}}" target="_blank" class="positive">{{name}}</a>
-            </h2>-->
+
             <h2>
               {{name}}
             </h2>
             <p>
               {{tagline}}
             </p>
-            <!--
-            {{#with author}}
-              <p>
-                <small>via <a href="{{pathFor 'users.show'}}" class="dark">{{profile.name}}</a></small>
-              </p>
-            {{/with}}
-          -->
+
             <span class="date-posted">
               {{datePosted}}
             </span>
           {{/ionItem}}
 
 
-        {{/with}}
 
         <div class="padding product-detail-comments">
           <h3 class="font-edit">点击右侧按钮就开始答题啦~</h3>
@@ -61,6 +51,7 @@
             {{> _comment}}
           {{/each}}
         </div>
+        {{/with}}
 
       </div>
 
