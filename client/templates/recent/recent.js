@@ -15,7 +15,5 @@ Template.recent.rendered = function () {
 };
 
 Template.recent.helpers({
-  products: function () {
-    return Products.find({}, {sort: {createdAt: -1, name: -1}});
-  }
+
 });

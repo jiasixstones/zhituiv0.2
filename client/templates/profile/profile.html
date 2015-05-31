@@ -11,10 +11,12 @@
     <h1 class="title">个人中心</h1>
   {{/contentFor}}
 
+
+
   {{#ionView}}
     {{#ionContent}}
+    {{> _profileHeader name=GetUserName}}
       {{#with user}}
-        {{> _profileHeader}}
         <h3>我赞过的</h3>
         {{#ionList}}
           {{#each records}}

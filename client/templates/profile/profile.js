@@ -27,5 +27,9 @@ Template.profile.helpers({
   },
   records: function() {
     return Records.find();
+  },
+  GetUserName: function(){
+    
+    return Meteor.user().emails[0].address;
   }
 });
