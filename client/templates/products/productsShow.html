@@ -11,7 +11,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Details</h1>
+    <h1 class="title">你问我答</h1>
   {{/contentFor}}
 
   {{#ionView}}
@@ -44,21 +44,14 @@
             </span>
           {{/ionItem}}
 
-          <div class="padding product-detail-upvotes">
-            <h5>Upvotes <small>{{numberOfVotes}}</small></h5>
-            {{#each voters}}
-              <a href="{{pathFor 'users.show'}}">
-                {{> avatar user=this size="small" shape="circle"}}
-              </a>
-            {{/each}}
-          </div>
+
         {{/with}}
 
         <div class="padding product-detail-comments">
-          <h5>Comments</h5>
+          <h3 class="font-edit">点击右侧按钮就开始答题啦~</h3>
           {{#with product}}
-            <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
-              {{>ionIcon icon="plus"}}
+            <button class="button button-small button-square button-new-comment button-edit" data-action="new-comment">
+              {{>ionIcon icon="edit"}}
             </button>
           {{/with}}
         </div>

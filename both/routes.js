@@ -1,5 +1,5 @@
 Router.route('/', {
-  name: 'trending'
+  name: 'notifications'
 });
 
 Router.route('/recent', {
@@ -14,8 +14,8 @@ Router.route('/users/:_id', {
   name: 'users.show'
 });
 
-Router.route('/notifications', {
-  name: 'notifications'
+Router.route('/trending', {
+  name: 'trending'
 });
 
 Router.route('/profile', {
