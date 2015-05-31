@@ -15,9 +15,10 @@
     {{#ionContent}}
       {{#with user}}
         {{> _profileHeader}}
+        <h3>我赞过的</h3>
         {{#ionList}}
           {{#each records}}
-            hello, {{userId}}, {{GetUserName}},  {{GetProductName}},{{GetCommentName}}<br>
+            问题{{GetProductName}}<br>答案{{GetCommentName}}<br><br>
           {{/each}}
         {{/ionList}}
       {{else}}

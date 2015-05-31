@@ -9,8 +9,7 @@ Template.profile.rendered = function () {
     if (!this.subscription.ready()) {
       IonLoading.show();
     } else {
-      //console.log('records here');
-      //console.log( Records.find().fetch() );
+
       IonLoading.hide();
     }
   }.bind(this));
