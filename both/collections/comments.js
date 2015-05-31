@@ -19,7 +19,7 @@ Comments.attachSchema(new SimpleSchema({
     autoform: {
       rows: 6,
       'label-type': 'placeholder',
-      placeholder: 'Add your comment…'
+      placeholder: '填写你的答案……'
     }
   },
   userId: {

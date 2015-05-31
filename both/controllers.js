@@ -13,3 +13,4 @@ UsersShowController = AppController.extend({});
 NotificationsController = AppController.extend({});
 
 ProfileController = AppController.extend({});
+ResumeController = AppController.extend({});

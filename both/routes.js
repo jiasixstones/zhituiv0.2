@@ -22,5 +22,6 @@ Router.route('/profile', {
   name: 'profile'
 });
 
-Router.route('/resume',
-  {name:'resume'});
+Router.route('/resume',{
+  name:'resume'
+});

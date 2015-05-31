@@ -4,7 +4,7 @@ AutoForm.hooks({
       Meteor.call('Products.comment', Router.current().params._id);
       IonModal.close();
       IonKeyboard.close();
-      Router.go('products.show', {_id: result});
+      //Router.go('products.show', {_id: result});
     }
   }
 });

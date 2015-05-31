@@ -45,7 +45,7 @@ Products.attachSchema(new SimpleSchema({
     type: String,
     autoform: {
       'label-type': 'placeholder',
-      placeholder: 'Product Name'
+      placeholder: '问题内容'
     },
     max: 200
   },
@@ -53,7 +53,7 @@ Products.attachSchema(new SimpleSchema({
     type: String,
     autoform: {
       'label-type': 'placeholder',
-      placeholder: 'Tagline'
+      placeholder: '问题标签'
     },
     max: 200
   },
