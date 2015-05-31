@@ -58,3 +58,17 @@ Comments.attachSchema(new SimpleSchema({
   }
 
 }));
+
+Records = new Mongo.Collection('records');
+
+Records.helpers({
+  GetUserName: function(){
+    return Meteor.users.findOne({_id: this.userId}).emails[0].address;
+  },
+  GetProductName: function(){
+    return Products.findOne({_id: this.productId}).name;
+  },
+  GetCommentName: function(){
+    return Comments.findOne({_id: this.commentId}).body;
+  }
+});

@@ -10,6 +10,13 @@ Template._upVoteButton.events({
       return;
     }
 
+Records.insert(
+{
+    userId: Meteor.userId(),
+    productId: Router.current().params._id,
+    commentId: template.data._id
+});
+
     Meteor.call('Comments.vote', commentId);
-  }
+}
 });

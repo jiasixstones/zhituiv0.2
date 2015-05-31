@@ -9,6 +9,8 @@ Template.profile.rendered = function () {
     if (!this.subscription.ready()) {
       IonLoading.show();
     } else {
+      //console.log('records here');
+      //console.log( Records.find().fetch() );
       IonLoading.hide();
     }
   }.bind(this));
@@ -23,5 +25,8 @@ Template.profile.helpers({
     if (Meteor.userId()) {
       return Meteor.user();
     }
+  },
+  records: function() {
+    return Records.find();
   }
 });

@@ -16,8 +16,8 @@
       {{#with user}}
         {{> _profileHeader}}
         {{#ionList}}
-          {{#each votedProducts}}
-            {{> _productItem product=this path="products.show"}}
+          {{#each records}}
+            hello, {{userId}}, {{GetUserName}},  {{GetProductName}},{{GetCommentName}}<br>
           {{/each}}
         {{/ionList}}
       {{else}}
@@ -25,6 +25,7 @@
           {{> ionIcon icon="ios-person"}}
           No profile yet!
         </div>
+
       {{/with}}
     {{/ionContent}}
   {{/ionView}}

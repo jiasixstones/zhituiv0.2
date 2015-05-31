@@ -2,6 +2,10 @@ Meteor.publish('products', function() {
   return Products.find();
 });
 
+Meteor.publish('records', function() {
+  return Records.find();
+});
+
 Meteor.publish('productsSearch', function(query) {
   check(query, String);
 
@@ -21,6 +25,11 @@ Meteor.publishComposite('product', function(_id) {
       {
         find: function(product) {
           return Meteor.users.find({_id: product.userId});
+        }
+      },
+      {
+        find: function(product) {
+          return Records.find({productId: _id});
         }
       },
       {
@@ -52,9 +61,22 @@ Meteor.publishComposite('user', function(_id) {
     children: [
       {
         find: function(user) {
-          return Products.find({_id: {$in: user.profile.votedProductIds}});
+          //return Products.find({_id: {$in: user.profile.votedProductIds}});
+          return Products.find();
         }
-      }
+      },
+      {
+        find: function(user) {
+          //return Products.find({_id: {$in: user.profile.votedProductIds}});
+          return Comments.find();
+        }
+      },
+      {
+        find: function(user) {
+          console.log('publish ' + user._id);
+          return Records.find({userId: user._id});
+        }
+      },
     ]
   };
 });
