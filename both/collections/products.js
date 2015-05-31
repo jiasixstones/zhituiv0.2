@@ -6,7 +6,7 @@ Products.before.insert(function (userId, doc) {
 
 Products.helpers({
   datePosted: function () {
-    return moment(this.createdAt).format('M/D');
+    return moment(this.createdAt).format('M月D日');
   },
   author: function () {
     return Meteor.users.findOne({_id: this.userId});

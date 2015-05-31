@@ -1,9 +1,10 @@
-Players = new Mongo.Collection("Players");
+
 AccountsTemplates.configure({
   negativeValidation: false,
   negativeFeedback: false,
   positiveValidation: false,
   positiveFeedback: false,
+
 });
 /*
 Template.signIn.events({
