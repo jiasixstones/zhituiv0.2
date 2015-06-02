@@ -20,7 +20,9 @@
         <h3>我赞过的</h3>
         {{#ionList}}
           {{#each records}}
-            问题{{GetProductName}}<br>答案{{GetCommentName}}<br><br>
+            {{#ionItem}}
+              问题{{GetProductName}}<br>答案{{GetCommentName}}<br><br>
+            {{/ionItem}}
           {{/each}}
         {{/ionList}}
       {{else}}
