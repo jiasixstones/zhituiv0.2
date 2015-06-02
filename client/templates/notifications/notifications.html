@@ -17,26 +17,50 @@
 <!--{{#each comment}}
 {{commentsId}}
 {{/each}}-->
-        下面就是我们的英雄榜：<br>
+      {{#ionList}}
 
         {{#each boards}}
-          <!-- {{userId}},  -->
-          {{GetUserName userId}} 
+          {{#ionItem}}
+            <div class="row">
+              <div class="col">
+                答题人
+              </div>
 
-            {{#each getQuizzes}}
-              {{GetProductName productId}}, {{votes}}
-            {{/each}}
+              {{#each getQuizzes}}
+                <div class="col">
+                  {{GetProductTagline productId}}
+                </div>
+              {{/each}}
 
-          <br>
+            </div>
+          {{/ionItem}}
         {{/each}}
-<!-- 
+
+        {{#each boards}}
+          {{#ionItem}}
+            <div class="row">
+              <div class="col">
+                {{GetUserName userId}}
+              </div>
+
+              {{#each getQuizzes}}
+                <div class="col">
+                  {{votes}}
+                </div>
+              {{/each}}
+
+            </div>
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+<!--
         {{#each users}}
           {{_id}}, {{username}},  <br>
 
           {{#each products}}
-            {{name}}   
+            {{name}}
             我获得的点赞数是：
-              {{getMyVotes ../_id this._id}} 
+              {{getMyVotes ../_id this._id}}
 
             <br>
           {{/each}}

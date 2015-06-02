@@ -38,6 +38,9 @@ Template.notifications.helpers({
   GetProductName: function (productId) {
     return Products.findOne(productId).name;
   },
+  GetProductTagline: function (productId) {
+    return Products.findOne(productId).tagline;
+  },
   users: function () {
     //console.log('subs users data coming here');
     // console.log(Meteor.users.find());
@@ -52,7 +55,7 @@ Template.notifications.helpers({
     var s = this.quizzes.sort(function(a,b) {
         var name1 = Products.findOne(a.productId).name;
         var name2 = Products.findOne(b.productId).name;
-    
+
         return name1.localeCompare(name2);
       }
     );
