@@ -21,8 +21,21 @@ Template.productsShow.helpers({
 
   comments: function () {
     return Comments.find({productId: Router.current().params._id}, {sort: {numberOfupVotes: -1}});
-  }
+  },
 
+  hasNotAnswered: function (productId) {
+    // body...
+    var userId = Meteor.userId();
+    console.log('hasNotAnswered')
+    console.log(userId);
+    console.log(productId);
+
+    var r = Comments.find({userId: userId, productId: productId}).fetch();
+    if (r.length == 0)
+      return true;
+
+    return false;
+  }
 });
 
 Template.productsShow.events({

@@ -72,3 +72,6 @@ Records.helpers({
     return Comments.findOne({_id: this.commentId}).body;
   }
 });
+
+Boards = new Mongo.Collection('boards');
+

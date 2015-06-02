@@ -6,6 +6,26 @@ Meteor.publish('records', function() {
   return Records.find();
 });
 
+Meteor.publishComposite('boards', function() {
+  return {
+    find: function() {
+      return Boards.find();
+    },
+    children: [
+      {
+        find: function(board) {
+          return Meteor.users.find({_id: board.userId});
+        }
+      },
+      {
+        find: function(board) {
+          return Products.find({});
+        }
+      },
+    ]
+  };
+});
+
 Meteor.publish('productsSearch', function(query) {
   check(query, String);
 
@@ -30,6 +50,11 @@ Meteor.publishComposite('product', function(_id) {
       {
         find: function(product) {
           return Records.find({productId: _id});
+        }
+      },
+      {
+        find: function(product) {
+          return Boards.find({});
         }
       },
       {

@@ -17,11 +17,32 @@
 <!--{{#each comment}}
 {{commentsId}}
 {{/each}}-->
+        下面就是我们的英雄榜：<br>
 
-        {{#each recodes}}
-        {{userId}}
+        {{#each boards}}
+          <!-- {{userId}},  -->
+          {{GetUserName userId}} 
+
+            {{#each getQuizzes}}
+              {{GetProductName productId}}, {{votes}}
+            {{/each}}
+
+          <br>
         {{/each}}
+<!-- 
+        {{#each users}}
+          {{_id}}, {{username}},  <br>
 
+          {{#each products}}
+            {{name}}   
+            我获得的点赞数是：
+              {{getMyVotes ../_id this._id}} 
+
+            <br>
+          {{/each}}
+          <br>
+        {{/each}}
+ -->
         <!--{{#each name}}
         {{username}}
         {{/each}}-->

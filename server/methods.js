@@ -18,14 +18,29 @@ Meteor.methods({
     }
 
     Products.update({_id: _id}, {$inc: {numberOfComments: 1}});
-  }
-,
+  },
+
   'Comments.vote': function (_id) {
     if (!Meteor.user()) {
       return;
     }
 
     Comments.update({_id: _id}, {$inc: {numberOfupVotes: 1}});
+  },
+
+  'Boards.update': function (_id, productId, votes) {
+    if (!Meteor.user()) {
+      return;
+    }
+
+    Boards.update({
+        _id: _id,
+        quizzes: { $elemMatch: { productId: productId}}
+      }, 
+      {$set: { "quizzes.$.votes": votes } }
+    );
+    
   }
+
 
 });

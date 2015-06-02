@@ -14,5 +14,7 @@ Accounts.onCreateUser(function(options, user) {
   //user.emails = user.services['meteor-developer'].emails;
   //user.profile = options.profile;
   //user.profile.votedProductIds = [];
+  console.log(user);
+  Boards.insert({userId: user._id});
   return user;
 });

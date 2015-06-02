@@ -37,15 +37,16 @@
           {{/ionItem}}
 
 
-
-        <div class="padding product-detail-comments">
-          <h3 class="font-edit">点击右侧按钮就开始答题啦~</h3>
-          {{#with product}}
-            <button class="button button-small button-square button-new-comment button-edit" data-action="new-comment">
-              {{>ionIcon icon="edit"}}
-            </button>
-          {{/with}}
-        </div>
+        {{#if hasNotAnswered this._id}}
+          <div class="padding product-detail-comments">
+            <h3 class="font-edit">点击右侧按钮就开始答题啦~</h3>
+            {{#with product}}
+              <button class="button button-small button-square button-new-comment button-edit" data-action="new-comment">
+                {{>ionIcon icon="edit"}}
+              </button>
+            {{/with}}
+          </div>
+        {{/if}}
 
         <div class="list">
           {{#each comments}}
