@@ -14,7 +14,7 @@ Meteor.publishComposite('boards', function() {
     children: [
       {
         find: function(board) {
-          return Meteor.users.find({_id: board.userId});
+          return Meteor.users.find();
         }
       },
       {

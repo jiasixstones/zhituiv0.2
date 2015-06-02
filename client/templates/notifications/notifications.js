@@ -32,6 +32,9 @@ Template.notifications.created = function () {
 
 
 Template.notifications.helpers({
+  GetUser: function (userId) {
+    return Meteor.users.findOne(userId);
+  },
   GetUserName: function (userId) {
     return Meteor.users.findOne(userId).username;
   },
@@ -50,7 +53,39 @@ Template.notifications.helpers({
     return Meteor.users.find();
   },
   boards: function () {
-    return Boards.find({});
+    //return Boards.find({});
+    //, {sort: { "quizzes.productId": -1}});
+    // return Boards.find({'quizzes.productId': 'HcFs8aKZiATxWktKN'}, { sort : {'quizzes.votes': -1}});
+    //var pId = 'HcFs8aKZiATxWktKN';
+    var pId = Session.get('sortBy');
+    var boards = Boards.find().fetch();
+    console.log('-----');
+    console.log(boards);
+    console.log('****');
+    //return boards.sort(function(a, b){return a.userId.localeCompare(b.userId)});
+
+    return boards.sort( function(a, b) {
+      // body...
+      var p1, p2;
+      console.log(a.quizzes);
+      for (i = 0; i < a.quizzes.length; i++)
+      {
+          p1 = a.quizzes[i];
+          console.log('p1', p1);
+          if (p1.productId == pId)
+          {
+            for (j = 0; j < b.quizzes.length; j++)
+            {
+              p2 = b.quizzes[j];
+              if  (p2.productId == pId)
+              {
+                console.log(p1.votes, 'vs', p2.votes);
+                return (p1.votes - p2.votes);
+              }
+            }
+          }
+      }
+    })
   },
   getQuizzes: function () {
     console.log(this.quizzes);

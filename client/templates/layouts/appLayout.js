@@ -21,5 +21,10 @@ Template.appLayout.events({
         return true;
       }
     });
+  },
+  'click [data-action=sort-product]': function (event, template) {
+    console.log(template);
+    console.log(this);
+    Session.set('sortBy', this._id);
   }
 });

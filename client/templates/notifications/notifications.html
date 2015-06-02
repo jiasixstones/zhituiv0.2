@@ -26,8 +26,10 @@
               </div>
 
               {{#each products}}
-                <div class="col">
-                  {{tagline}}
+                <div class="col">               
+                  <button class="button button-clear pull-right button-positive" data-action="sort-product" data-product-id="{{this._id}}">
+                    {{tagline}} {{> ionIcon icon='arrow-down-b'}} 
+                  </button>
                 </div>
               {{/each}}
 
@@ -35,6 +37,7 @@
           {{/ionItem}}
 
         {{#each boards}}
+
           {{#ionItem}}
             <div class="row">
               <div class="col">
