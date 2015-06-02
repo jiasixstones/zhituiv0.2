@@ -237,3 +237,8 @@ a.comment-item-author {
   margin: 0 0 1.5em;
   padding: 0;
 }
+
+.col {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
