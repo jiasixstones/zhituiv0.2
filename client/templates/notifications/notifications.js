@@ -42,7 +42,7 @@ Template.notifications.helpers({
     return Products.findOne(productId).name;
   },
   products: function () {
-    return Products.find();
+    return Products.find({}, {sort: {name: 1}});
   },
   GetProductTagline: function (productId) {
     return Products.findOne(productId).tagline;
