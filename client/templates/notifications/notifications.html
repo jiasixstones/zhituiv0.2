@@ -19,22 +19,20 @@
 {{/each}}-->
       {{#ionList}}
 
-        {{#each boards}}
           {{#ionItem}}
             <div class="row">
               <div class="col">
                 答题人
               </div>
 
-              {{#each getQuizzes}}
+              {{#each products}}
                 <div class="col">
-                  {{GetProductTagline productId}}
+                  {{tagline}}
                 </div>
               {{/each}}
 
             </div>
           {{/ionItem}}
-        {{/each}}
 
         {{#each boards}}
           {{#ionItem}}

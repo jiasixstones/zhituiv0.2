@@ -38,6 +38,9 @@ Template.notifications.helpers({
   GetProductName: function (productId) {
     return Products.findOne(productId).name;
   },
+  products: function () {
+    return Products.find();
+  },
   GetProductTagline: function (productId) {
     return Products.findOne(productId).tagline;
   },
