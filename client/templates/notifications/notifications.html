@@ -1,0 +1,76 @@
+<template name="notifications">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="share-product" data-product-id="{{product._id}}">
+      {{> ionIcon icon='share'}}
+    </button>
+  {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">英雄榜</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+<!--{{#each comment}}
+{{commentsId}}
+{{/each}}-->
+      {{#ionList}}
+
+          {{#ionItem}}
+            <div class="row">
+              <div class="col">
+                答题人
+              </div>
+
+              {{#each products}}
+                <div class="col">
+                  {{tagline}}
+                </div>
+              {{/each}}
+
+            </div>
+          {{/ionItem}}
+
+        {{#each boards}}
+          {{#ionItem}}
+            <div class="row">
+              <div class="col">
+                {{GetUserName userId}}
+              </div>
+
+              {{#each getQuizzes}}
+                <div class="col">
+                  {{votes}}
+                </div>
+              {{/each}}
+
+            </div>
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+<!--
+        {{#each users}}
+          {{_id}}, {{username}},  <br>
+
+          {{#each products}}
+            {{name}}
+            我获得的点赞数是：
+              {{getMyVotes ../_id this._id}}
+
+            <br>
+          {{/each}}
+          <br>
+        {{/each}}
+ -->
+        <!--{{#each name}}
+        {{username}}
+        {{/each}}-->
+
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

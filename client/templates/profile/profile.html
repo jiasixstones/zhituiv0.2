@@ -1,0 +1,37 @@
+<template name="profile">
+  {{#if currentUser}}
+    {{#contentFor "headerButtonRight"}}
+      <button class="button button-clear pull-right button-positive" data-ion-modal="settings">
+        {{> ionIcon icon='ios-gear-outline'}}
+      </button>
+    {{/contentFor}}
+  {{/if}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">个人中心</h1>
+  {{/contentFor}}
+
+
+
+  {{#ionView}}
+    {{#ionContent}}
+    {{> _profileHeader name=GetUserName}}
+      {{#with user}}
+        <h3>我赞过的</h3>
+        {{#ionList}}
+          {{#each records}}
+            {{#ionItem}}
+              问题{{GetProductName}}<br>答案{{GetCommentName}}<br><br>
+            {{/ionItem}}
+          {{/each}}
+        {{/ionList}}
+      {{else}}
+        <div class="empty-view">
+          {{> ionIcon icon="ios-person"}}
+          No profile yet!
+        </div>
+
+      {{/with}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

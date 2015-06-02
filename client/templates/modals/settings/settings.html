@@ -1,0 +1,22 @@
+<template name="settings">
+  {{#ionModal title="设置"}}
+    <div class="list">
+      <div class="item item-divider">
+      用户
+      </div>
+      <a class="item item-icon-left item-icon-right" href="#" data-action="sign-out">
+        {{> ionIcon icon="ios-locked"}}
+        登出
+        {{> ionIcon icon="ios-arrow-right"}}
+      </a>
+      <div class="item item-divider">
+        关于
+      </div>
+      <a class="item item-icon-left item-icon-right" href="https://www.taoligroup.com" target="_blank">
+        {{> ionIcon icon="social-github"}}
+        桃李帮官网
+        {{> ionIcon icon="ios-arrow-right"}}
+      </a>
+    </div>
+  {{/ionModal}}
+</template>

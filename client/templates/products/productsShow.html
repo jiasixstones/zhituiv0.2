@@ -1,0 +1,62 @@
+<template name="productsShow">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+<!--
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="share-product" data-product-id="{{product._id}}">
+      {{> ionIcon icon='ios-upload-outline'}}
+    </button>
+  {{/contentFor}}
+-->
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">你问我答</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <div class="product-detail">
+
+        {{#with product}}
+
+          {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
+
+            <h2>
+              {{name}}
+            </h2>
+            <p>
+              {{tagline}}
+            </p>
+
+            <span class="date-posted">
+              {{datePosted}}
+            </span>
+          {{/ionItem}}
+
+
+        {{#if hasNotAnswered this._id}}
+          <div class="padding product-detail-comments">
+            <h3 class="font-edit">点击右侧按钮就开始答题啦~</h3>
+            {{#with product}}
+              <button class="button button-small button-square button-new-comment button-edit" data-action="new-comment">
+                {{>ionIcon icon="edit"}}
+              </button>
+            {{/with}}
+          </div>
+        {{/if}}
+
+        <div class="list">
+          {{#each comments}}
+            {{> _comment}}
+          {{/each}}
+        </div>
+        {{/with}}
+
+      </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>
