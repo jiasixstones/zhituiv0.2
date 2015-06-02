@@ -73,10 +73,29 @@ Meteor.publishComposite('user', function(_id) {
       },
       {
         find: function(user) {
-          console.log('publish ' + user._id);
+
           return Records.find({userId: user._id});
         }
       },
     ]
+  };
+});
+
+Meteor.publishComposite('record', function(_id) {
+  return {
+    find: function() {
+
+      return Records.find();
+    },
+    children: [
+      {
+        find: function(record) {
+
+
+          return Comments.find();
+        }
+      }
+  ]
+    
   };
 });

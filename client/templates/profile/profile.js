@@ -22,6 +22,7 @@ Template.profile.rendered = function () {
 Template.profile.helpers({
   user: function () {
     if (Meteor.userId()) {
+      
       return Meteor.user();
     }
   },
@@ -29,7 +30,7 @@ Template.profile.helpers({
     return Records.find();
   },
   GetUserName: function(){
-    
+
     return Meteor.user().emails[0].address;
   }
 });

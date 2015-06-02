@@ -1,7 +1,33 @@
 <template name="notifications">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="share-product" data-product-id="{{product._id}}">
+      {{> ionIcon icon='share'}}
+    </button>
+  {{/contentFor}}
   {{#contentFor "headerTitle"}}
     <h1 class="title">英雄榜</h1>
   {{/contentFor}}
 
+  {{#ionView}}
+    {{#ionContent}}
+<!--{{#each comment}}
+{{commentsId}}
+{{/each}}-->
+
+        {{#each recodes}}
+        {{userId}}
+        {{/each}}
+
+        <!--{{#each name}}
+        {{username}}
+        {{/each}}-->
+
+
+    {{/ionContent}}
+  {{/ionView}}
 
 </template>
