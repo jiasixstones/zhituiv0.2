@@ -80,7 +80,7 @@ Template.notifications.helpers({
               if  (p2.productId == pId)
               {
                 console.log(p1.votes, 'vs', p2.votes);
-                return (p1.votes - p2.votes);
+                return -(p1.votes - p2.votes);
               }
             }
           }
