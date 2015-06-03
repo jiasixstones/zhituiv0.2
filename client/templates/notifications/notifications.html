@@ -17,22 +17,20 @@
 <!--{{#each comment}}
 {{commentsId}}
 {{/each}}-->
+
       {{#ionList}}
 
           {{#ionItem}}
             <div class="row">
-              <div class="col">
-                答题人
-              </div>
+              <div class="col"><button class="button button-clear pull-right button-positive">答题人</button></div>
 
               {{#each products}}
                 <div class="col">               
                   <button class="button button-clear pull-right button-positive" data-action="sort-product" data-product-id="{{this._id}}">
-                    {{tagline}} {{> ionIcon icon='arrow-down-b'}} 
+                    {{tagline}}{{> ionIcon icon='arrow-down-b'}} 
                   </button>
                 </div>
               {{/each}}
-
             </div>
           {{/ionItem}}
 
@@ -60,6 +58,41 @@
           {{/ionItem}}
         {{/each}}
       {{/ionList}}
+      <!-- -r- -->
+      <div class="row">
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">1<br>2<br>3<br>4</div>
+</div>
+
+<div class="row">
+  <div class="col col-top">.col</div>
+  <div class="col col-center">.col</div>
+  <div class="col col-bottom">.col</div>
+  <div class="col">1<br>2<br>3<br>4</div>
+</div>
+
+<div class="row row-top">
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">1<br>2<br>3<br>4</div>
+</div>
+
+<div class="row row-center">
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">1<br>2<br>3<br>4</div>
+</div>
+
+<div class="row row-bottom">
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">1<br>2<br>3<br>4</div>
+</div>
 <!--
         {{#each users}}
           {{_id}}, {{username}},  <br>
