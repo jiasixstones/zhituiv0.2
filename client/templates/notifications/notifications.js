@@ -50,7 +50,7 @@ Template.notifications.helpers({
     return Products.findOne(productId).tagline;
   },
   GetVotesFromQuizzes: function (quizzes, productId) {
-    var votes = -1;
+    var votes = "_";
 
     console.log(quizzes);
     console.log(productId);
@@ -104,6 +104,7 @@ Template.notifications.helpers({
             }
           }
       }
+      return 1;
     })
   },
   getQuizzes: function () {
