@@ -15,6 +15,6 @@ Accounts.onCreateUser(function(options, user) {
   //user.profile = options.profile;
   //user.profile.votedProductIds = [];
   console.log(user);
-  Boards.insert({userId: user._id});
+  Boards.insert({userId: user._id, quizzes: []});
   return user;
 });

@@ -104,4 +104,48 @@ console.log()
       });
     });
   }*/
+
+  var products = [
+    {
+        "name" : "Q1:如何结合“父亲节”对于一个折叠自行车的销售进行宣传？",
+        "tagline" : "新媒体运营",
+        "createdAt" : new Date(),
+        "userId" : "a4pS8MyAhgyL74BN6",
+        "voterIds" : [],
+        "numberOfVotes" : 0,
+        "numberOfComments" : 0
+    },
+    {
+        "name" : "Q2:如果你是《栀子花开》的宣发，你会怎样设计宣传方案？",
+        "tagline" : "宣传",
+        "createdAt" : new Date(),
+        "userId" : "a4pS8MyAhgyL74BN6",
+        "voterIds" : [],
+        "numberOfVotes" : 0,
+        "numberOfComments" : 0
+    },    
+    {
+        "name" : "Q3:如何根据清华大学“卖被子”事件，进行公关? ",
+        "tagline" : "公关",
+        "createdAt" : new Date(),
+        "userId" : "a4pS8MyAhgyL74BN6",
+        "voterIds" : [],
+        "numberOfVotes" : 0,
+        "numberOfComments" : 0
+    },    
+  ];
+
+  if (Products.find({}).count() === 0) {
+    _(products).each(function (product) {
+      Products.insert({
+        name: product.name,
+        tagline: product.tagline,
+        createdAt: new Date(),
+        userId: product.userId,
+        "numberOfVotes" : 0,
+        "numberOfComments" : 0
+      });
+    });
+  }
+  
 });

@@ -6,28 +6,13 @@ AccountsTemplates.configure({
   positiveFeedback: false,
 
 });
-/*
-Template.signIn.events({
-  'click [data-action=sign-in]': function (event, template) {
-    Meteor.loginWithMeteor
-    DeveloperAccount({}, function (error) {
-      if (error) {
-        alert(error);
-      } else {
-        IonModal.close();
-      }
-    });
-  }
-});
-*/
+
 AccountsTemplates.configureRoute('signIn', {
-    name: 'signin',
+  name: 'signin',
   path: '/login',
-    template: 'myLogin',
+  template: 'myLogin',
   layoutTemplate: 'myLayout',
-  redirect: '/recent',});
-
-
+  redirect: '/',});
 
   /*
     AccountsTemplates.configureRoute('signIn', {
@@ -97,7 +82,6 @@ AccountsTemplates.configureRoute('signIn', {
           minLength: 2,
       },
       
-
       {
           _id: 'email',
           type: 'email',

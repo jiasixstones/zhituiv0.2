@@ -2,6 +2,8 @@ Template.notifications.rendered = function () {
   if (!Meteor.loggingIn() && !Meteor.user()) {
     IonModal.open('signIn');
   }
+  else
+    IonModal.close();
 };
 
 /*
@@ -46,6 +48,23 @@ Template.notifications.helpers({
   },
   GetProductTagline: function (productId) {
     return Products.findOne(productId).tagline;
+  },
+  GetVotesFromQuizzes: function (quizzes, productId) {
+    var votes = -1;
+
+    console.log(quizzes);
+    console.log(productId);
+
+    _.each(quizzes, function(q) {
+      console.log( q.productId, ' vs ', productId);
+      if (q.productId == productId)
+      {
+        console.log('q.votes returned');
+        console.log(q.votes);
+        votes = q.votes;
+      }
+    });
+    return votes;
   },
   users: function () {
     //console.log('subs users data coming here');

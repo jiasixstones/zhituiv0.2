@@ -44,12 +44,18 @@
                 {{GetUserName userId}}
               </div>
 
+              {{#each products}}
+                <div class="col">               
+                  {{GetVotesFromQuizzes ../quizzes this._id}}
+                </div>
+              {{/each}}
+<!-- 
               {{#each getQuizzes}}
                 <div class="col">
                   {{votes}}
                 </div>
               {{/each}}
-
+ -->
             </div>
           {{/ionItem}}
         {{/each}}

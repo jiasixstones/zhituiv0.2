@@ -6,3 +6,21 @@ Template.settings.events({
     });
   }
 });
+
+Template.settings.events({
+  'click [data-action=sign-in]': function (event, template) {
+    /*
+    Meteor.loginWithMeteor
+    DeveloperAccount({}, function (error) {
+      if (error) {
+        alert(error);
+      } else {
+        IonModal.close();
+      }
+    });
+  }
+  */
+    IonModal.close();
+  }
+});
+
