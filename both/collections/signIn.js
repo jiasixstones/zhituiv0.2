@@ -10,9 +10,8 @@ AccountsTemplates.configure({
 AccountsTemplates.configureRoute('signIn', {
   name: 'signin',
   path: '/login',
-  template: 'myLogin',
-  layoutTemplate: 'myLayout',
-  redirect: '/',});
+  redirect: '/'
+});
 
   /*
     AccountsTemplates.configureRoute('signIn', {
@@ -81,7 +80,7 @@ AccountsTemplates.configureRoute('signIn', {
           required: true,
           minLength: 2,
       },
-      
+
       {
           _id: 'email',
           type: 'email',
