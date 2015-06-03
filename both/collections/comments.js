@@ -7,8 +7,8 @@ Comments.helpers({
   },
 
   author: function () {
-    //return Meteor.users.findOne({_id: this.userId});
-    return this.userId;
+    return Meteor.users.findOne({_id: this.userId}).username;
+    //return this.userId;
   }
 
 });
